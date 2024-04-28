@@ -12,7 +12,7 @@ function viewWaffle(req, res) {
         }
 
         const waffleData = JSON.parse(data);
-        res.render('waffle', waffleData);  // Renderiza a página usando os dados do JSON
+        res.render('waffle', waffleData); 
     });
   }
 

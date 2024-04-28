@@ -4,14 +4,16 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   display: flex;
   flex-direction: column;
 }
 
-html {
-  font-size: 62.5%;
-}
+/*NAVBAR*/
 
 .navbar {
   height: 3cm;
@@ -37,6 +39,8 @@ html {
 .menu li:hover {
   text-decoration: underline;
 }
+
+/*SLIDESHOW*/
 
 .slideshow {
   height: 88vh;
@@ -99,6 +103,12 @@ html {
   bottom: 5rem;
 }
 
+.typewriter h1 {
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  width: max-content; 
+}
+
 .controls a {
   padding: 1rem;
   display: inline-block;
@@ -115,15 +125,29 @@ html {
   width: 10rem;
 }
 
-/* Estilo para a galeria de waffles */
+/*GALERIA DE WAFLLES*/
+
+.container {
+  background-color: #9F7860;
+  height: 92.4vh;
+}
+
+.container > h2 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 50px;
+  color: #fff;
+}
+
 .waffle-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px; /* Ajusta o espaço entre os itens */
-  justify-content: center; /* Alinha os itens do grid no centro */
-  padding: 20px; /* Adiciona um pouco de espaço interno */
-  width: calc(70% - 40px); /* Calcula a largura para incluir o padding */
-  margin: 0 auto; /* Centraliza o .waffle-list horizontalmente */
+  gap: 20px; 
+  justify-content: center; 
+  padding: 20px; 
+  width: calc(70% - 40px); 
+  margin: 0 auto; 
 }
 
 .waffle {
@@ -140,12 +164,13 @@ html {
 
 .waffle img {
   width: 100%;
-  height: 200px; /* Ajuste conforme necessário */
-  object-fit: cover; /* Assegura que a imagem cubra o espaço disponível sem distorcer */
+  height: 200px; 
+  object-fit: cover;
 }
 
 .waffle h3 {
   background: #fff;
+  font-size: 24px;
   margin: 0;
   padding: 10px;
   text-align: center;
@@ -158,4 +183,27 @@ html {
 
 .waffle a:hover {
   text-decoration: underline;
+}
+
+/*FOOTER*/
+
+.footer {
+  background-color: #333; 
+  color: white;           
+  text-align: center;     
+  padding: 20px 0;        
+  font-size: 14px;        
+}
+
+.footer a {
+  color: #ffdd00;         
+  text-decoration: none; 
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.typewriter {
+  margin-bottom: 50px;
 }
