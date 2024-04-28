@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.navbar {
+  height: 3cm;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #CBA181;
+  color: #FFFFFF;
+}
+.logo {
+  font-size: 48px;
+  font-weight: bold;
+}
+.menu {
+  list-style: none;
+  font-size: 30px;
+  display: flex;
+}
+.menu li {
+  padding: 20px;
+  cursor: pointer;
+}
+.menu li:hover {
+  text-decoration: underline;
+}
+
+.slideshow {
+  height: 88vh;
+  background-color: #FFF1B1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel {
+  width: 80rem;
+  height: 80rem;
+  border: 7rem solid#eebe97;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -68%;
+  flex-shrink: 0;
+  transition: rotate 1s;
+}
+
+.slide {
+  width: 20rem;
+  position: absolute;
+}
+
+.slide:nth-child(1) {
+  bottom: -20rem;
+}
+
+.slide:nth-child(2) {
+  left: -20rem;
+}
+
+.slide:nth-child(3) {
+  top: -20rem;
+}
+
+.slide:nth-child(4) {
+  right: -20rem;
+}
+
+.slide.active img {
+  transform: scale(2.5);
+  transition: transform 0.5s 0.5s;
+}
+
+.slide img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.controls {
+  position: sticky;
+  bottom: 5rem;
+}
+
+.controls a {
+  padding: 1rem;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 10rem;
+  transition: background-color 1s;
+}
+
+.controls a.active {
+  background-color: #9F7860;
+}
+
+.controls img {
+  width: 10rem;
+}
+
+/* Estilo para a galeria de waffles */
+.waffle-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px; /* Ajusta o espaço entre os itens */
+  justify-content: center; /* Alinha os itens do grid no centro */
+  padding: 20px; /* Adiciona um pouco de espaço interno */
+  width: calc(70% - 40px); /* Calcula a largura para incluir o padding */
+  margin: 0 auto; /* Centraliza o .waffle-list horizontalmente */
+}
+
+.waffle {
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.waffle:hover {
+  transform: scale(1.05);
+}
+
+.waffle img {
+  width: 100%;
+  height: 200px; /* Ajuste conforme necessário */
+  object-fit: cover; /* Assegura que a imagem cubra o espaço disponível sem distorcer */
+}
+
+.waffle h3 {
+  background: #fff;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.waffle a {
+  color: #333;
+  text-decoration: none;
+}
+
+.waffle a:hover {
+  text-decoration: underline;
+}

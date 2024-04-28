@@ -2,9 +2,9 @@
   "name": "sessao",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon -e mustache,js index.js"
+    "start": "nodemon -e mustache,js server.js"
   },
   "author": "",
   "license": "ISC",
