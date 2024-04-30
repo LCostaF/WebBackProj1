@@ -207,3 +207,49 @@ body {
 .typewriter {
   margin-bottom: 50px;
 }
+
+/*LOGIN*/
+.login-container {
+  height: 60vh;
+  background-color: #FFF1B1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #333; /* Cor do texto */
+}
+
+.login-container form {
+  width: 300px; /* Largura do formulário */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%; /* Largura dos campos de entrada */
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc; /* Cor da borda */
+  border-radius: 5px; /* Raio da borda */
+}
+
+.login-container button[type="submit"] {
+  width: 100%; /* Largura do botão de envio */
+  padding: 10px;
+  background-color: #CBA181; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transição suave da cor de fundo */
+}
+
+.login-container button[type="submit"]:hover {
+  background-color: #A56B52; /* Mudança de cor de fundo ao passar o mouse */
+}
