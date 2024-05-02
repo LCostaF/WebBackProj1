@@ -18,10 +18,10 @@ function createWaffle(req, res) {
             res.status(500).send('Error parsing form data.');
             return;
         }
-
+        //TODO: criar variavel para style
         // Constantes recebem nome e conteúdo de um waffle
         const fileName = fields.fileName[0];  
-        const pageContent = fields.pageContent[0];  
+        const pageContent = fields.pageContent[0];
         const jsonFilePath = path.join(__dirname, '../documents/waffles/', fileName + '.json');
 
         // Verifica se já existe um waffle com o nome de arquivo (rota) fornecido
