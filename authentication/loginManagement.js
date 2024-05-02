@@ -46,7 +46,7 @@ function login(login, senha) {
     let senhaArquivo = process.env.PASSWORD;
 
     //Verifica se o login e senha estão corretas que nem a entrada
-    console.log(login+"-"+loginArquivo+"\n"+senha+"-"+senhaArquivo)
+    //console.log(login+"-"+loginArquivo+"\n"+senha+"-"+senhaArquivo)
     if(login === loginArquivo && senha === senhaArquivo) {
         return true;
     } else {

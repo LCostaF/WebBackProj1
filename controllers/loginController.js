@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const {login} = require('../java/loginManagement');
-const { loginDb } = require('../java/bd');
+const {login} = require('../authentication/loginManagement');
+const { loginDb } = require('../authentication/bd');
 
 function loginGet(req, res) {
     res.render("login");

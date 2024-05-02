@@ -37,7 +37,7 @@ app.use(routes);
 
 
 //Inicia a conexão com o banco de dados
-const { db } = require('./java/bd')
+const { db } = require('./authentication/bd')
 db(true);
 
 // Middleware para encerrar a conexão com o banco de dados quando a aplicação é encerrada
@@ -46,8 +46,8 @@ process.on('exit', () => {
 });
 
 //Criação do env
-const { createUser } = require('./java/loginManagement');
-//createUser("","");
+const { createUser } = require('./authentication/loginManagement');
+//createUser("Adiministrador@gmail.com","adm123");
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
