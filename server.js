@@ -16,6 +16,18 @@ var routes = require('./routes/routes');
 
 const app = express();
 
+//Criação do env
+const { createUser } = require('./authentication/loginManagement');
+//createUser("Administrador@gmail.com","adm123");
+
+//Sessão, não trocar essa trecho de lugar. Para evitar erro de seção.
+const session = require("express-session")
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 
@@ -24,15 +36,6 @@ app.use(express.urlencoded({ extended: false }));
 
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
-
-//Sessão
-const session = require("express-session")
-app.use(session({
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: false
-}));
-
 app.use(routes);
 
 
@@ -44,10 +47,6 @@ db(true);
 process.on('exit', () => {
     db(false);
 });
-
-//Criação do env
-const { createUser } = require('./authentication/loginManagement');
-//createUser("Adiministrador@gmail.com","adm123");
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
