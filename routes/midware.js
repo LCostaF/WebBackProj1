@@ -20,5 +20,4 @@ function authLogin(req, res, next) {
     }
 }
 
-
 module.exports = { checkLogin, authLogin };
