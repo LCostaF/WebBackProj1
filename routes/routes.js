@@ -14,7 +14,7 @@ router.get("/logout", loginController.logoutGet);
 router.post("/adm", loginController.admPost);
 router.get('/novo-waffle', checkLogin, criarPaginas.newWaffle);
 router.post('/criar-waffle',checkLogin, criarPaginas.createWaffle);
-router.get('/waffle/:fileName',checkLogin, visualizarPaginaController.viewWaffle)
+router.get('/waffle/:fileName', visualizarPaginaController.viewWaffle)
 router.get('/waffle/edit/:fileName',editWaffle.editWaffle);
 router.post('/post-waffle',editWaffle.postWaffle);
 //TODO: deletar rota após criar forma de deletar apropriada

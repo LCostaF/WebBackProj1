@@ -39,6 +39,15 @@ body {
 .menu li:hover {
   text-decoration: underline;
 }
+.menu a {
+  padding: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+.menu a:hover {
+  text-decoration: underline;
+}
 
 /*SLIDESHOW*/
 

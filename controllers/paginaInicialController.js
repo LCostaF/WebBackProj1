@@ -47,7 +47,8 @@ function main(req, res) {
                             { src: "images/control-img-2.png", index: 2 },
                             { src: "images/control-img-3.png", index: 3 },
                             { src: "images/control-img-4.png", index: 4 }
-                        ]
+                        ],
+                        loggedIn: req.session.loggedIn
                     });
                 }
             });

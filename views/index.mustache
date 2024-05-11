@@ -12,8 +12,11 @@
     <nav class="navbar">
         <div class="logo">WAFFLES</div>
         <ul class="menu">
-            <li>Home</li>
-            <li>Log in</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Log in</a></li>
+            {{#loggedIn}}
+            <li><a href="/novo-waffle">Novo Waffle</a></li>
+            {{/loggedIn}}
         </ul>
     </nav>
     <div class="slideshow">
