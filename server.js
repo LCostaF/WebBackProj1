@@ -5,6 +5,14 @@
 //  Lucas Costa Fuganti                 - RA: 2209675
 //  Marcus Vinícius Molina Freitas      - RA: 2383969
 
+// Logins
+// Usuário pelo .env
+// Login: Administrador@gmail.com
+// Senha: adm123
+
+// Usuário pelo BD
+// Login: carlos@gmail.com
+// Senha: c123
 // ---- Arquivo principal do sistema CMS ----
 
 const express = require('express');
@@ -15,10 +23,6 @@ const path = require('path');
 var routes = require('./routes/routes');
 
 const app = express();
-
-//Criação do env
-const { createUser } = require('./authentication/loginManagement');
-//createUser("Administrador@gmail.com","adm123");
 
 //Sessão, não trocar essa trecho de lugar. Para evitar erro de seção.
 const session = require("express-session")
