@@ -83,31 +83,6 @@ function createUserDb(email, senha, callback) {
     });
 }
 
-/*
-async function main() {
-    try {
-        // Ativar conexão
-        await db(true);
-        console.log('Conexão ativada com sucesso.');
-
-        // Fazer login
-        await new Promise((resolve, reject) => {
-            login("carlos@gmail.com", "c123", function(success) {
-                console.log("1 - Login bem-sucedido:", success);
-                resolve(success);
-            });
-        });
-
-        // Desativar conexão
-        await db(false);
-        console.log('Conexão desativada com sucesso.');
-    } catch (error) {
-        console.error('Erro:', error);
-    }
-}
-
-main(); */
-
 module.exports = {
     db,
     createUserDb,

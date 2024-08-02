@@ -3,6 +3,18 @@ const path = require('path');
 const fs = require('fs');
 const slugify = require('../utils/slugify');
 const pagesFilePath = path.join(__dirname, '../data/pages.json');
+const { readPages } = require('../utils/readPages');
+
+//CRIAR PÁGINA - ROTA GET PARA RENDERIZAR A PÁGINA
+
+const showCreateForm = (req, res) => {
+    res.render('createPage', { 
+        title: "Criar Nova Página", 
+        loggedIn: req.session.loggedIn
+    });
+};
+
+//CRIAR PÁGINA - ROTA POST PARA CRIAR AS PÁGINAS DE WAFFLES
 
 // Função para substituir as tags <h1> por <h2>
 function replaceH1Tags(content) {
@@ -12,28 +24,6 @@ function replaceH1Tags(content) {
 function savePages(pages) {
     fs.writeFileSync(pagesFilePath, JSON.stringify(pages, null, 2));
 }
-
-function readPages() {
-    let data;
-    try {
-        data = fs.readFileSync(pagesFilePath, 'utf-8');
-        return JSON.parse(data);  // Tenta analisar o conteúdo do arquivo como JSON
-    } catch (error) {
-        if (error.code === 'ENOENT' || data === '') {
-            console.log("Arquivo não encontrado ou vazio, retorna um array vazio")
-            return [];
-        } else {
-            throw error;
-        }
-    }
-}
-
-const showCreateForm = (req, res) => {
-    res.render('createPage', { 
-        title: "Criar Nova Página", 
-        loggedIn: req.session.loggedIn
-    });
-};
 
 const createPage = (req, res) => {
     const { title, content } = req.body;
@@ -65,6 +55,8 @@ const createPage = (req, res) => {
     res.redirect('/');
 };
 
+//EDITAR PÁGINA ROTA PARA RENDERIZAR A PÁGINA
+
 // Função para encontrar uma página pelo ID
 function findPageById(id) {
     const pages = readPages();
@@ -87,6 +79,8 @@ const showEditForm = (req, res) => {
     }
 };
 
+//EDITAR PÁGINA ROTA POST
+
 // Função para editar a página
 const editPage = (req, res) => {
     const { id } = req.params;
@@ -108,6 +102,8 @@ const editPage = (req, res) => {
         res.status(404).send('Página não encontrada');
     }
 };
+
+//EXCLUIR PÁGINA ROTA GET
 
 // Função para excluir a página
 const deletePage = (req, res) => {

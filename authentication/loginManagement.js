@@ -59,16 +59,3 @@ module.exports = {
     createUser,
     login
 };
-/*
-console.log(process.env.ADMIN);
-console.log(process.env.PASSWORD);
-*/
-
-/* Como importar
-const { createUser, login } = require('./loginManagement.js');
-
-// Usando as funções createUser e login
-createUser('Adm', '123');
-console.log(login('Adm', '123'));
-
-*/

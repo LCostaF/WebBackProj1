@@ -7,7 +7,7 @@ const loginController = require('../controllers/loginController');
 const pageController = require('../controllers/pageController');
 const paginaController = require('../controllers/paginaController');
 
-const { isAuthenticated, authLogin } = require('../middleware/authMiddleware');
+const { isAuthenticated } = require('../middleware/authMiddleware');
 
 // Configuração do Multer
 const storage = multer.diskStorage({
@@ -28,9 +28,9 @@ router.post('/perform-login', loginController.admPost);
 router.get('/pages/create', isAuthenticated, pageController.showCreateForm);
 router.post('/pages/create', isAuthenticated, upload.single('coverImage'), pageController.createPage);
 router.get('/logout', isAuthenticated, loginController.logoutGet);
-//===
+
 router.get('/pages/:url', paginaController.viewPage);
-//====TESTE
+
 router.get('/editar/:id', isAuthenticated, pageController.showEditForm);
 router.post('/editar/:id', isAuthenticated, upload.single('coverImage'), pageController.editPage);
 router.get('/excluir/:id', isAuthenticated, pageController.deletePage);
