@@ -1,7 +1,7 @@
 {{> header}}
 
-<div class="edit-page-container">
-    <form action="/editar/{{page.id}}" method="post" enctype="multipart/form-data" class="form-edit-page">
+<div class="create-page-container">
+    <form action="/editar/{{page.id}}" method="post" enctype="multipart/form-data" class="form-create-page">
         <div class="form-group">
             <label for="title">Título da Página:</label>
             <input type="text" id="title" name="title" value="{{page.title}}" required>
