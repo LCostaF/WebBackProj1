@@ -1,0 +1,25 @@
+{{> header}}
+
+<div class="edit-page-container">
+    <form action="/editar/{{page.id}}" method="post" enctype="multipart/form-data" class="form-edit-page">
+        <div class="form-group">
+            <label for="title">Título da Página:</label>
+            <input type="text" id="title" name="title" value="{{page.title}}" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Conteúdo da Página (HTML permitido):</label>
+            <textarea id="content" name="content" rows="10" required>{{{page.content}}}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="coverImage">Imagem de Capa:</label>
+            <input type="file" id="coverImage" name="coverImage" accept="image/*">
+        </div>
+        <button type="submit" class="button-submit">Salvar Alterações</button>
+    </form>
+</div>
+
+<script>
+    CKEDITOR.replace('content');
+</script>
+
+{{> footer}}

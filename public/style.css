@@ -13,6 +13,8 @@ body {
   flex-direction: column;
 }
 
+/*---------------------------------------------------------------PÁGINA INICIAL*/
+
 /*NAVBAR*/
 
 .navbar {
@@ -37,15 +39,6 @@ body {
   cursor: pointer;
 }
 .menu li:hover {
-  text-decoration: underline;
-}
-.menu a {
-  padding: 20px;
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-}
-.menu a:hover {
   text-decoration: underline;
 }
 
@@ -194,63 +187,17 @@ body {
   text-decoration: underline;
 }
 
-/* FORMULÁRIO DE WAFFLE */
-.waffle-form {
-  width: 50%;
-  margin: 50px auto;
-  background-color: #FFF1B1;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.waffle-form .form-group {
-  margin-bottom: 20px;
-}
-
-.waffle-form .form-label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 1.8rem;
-  color: #333;
-}
-
-.waffle-form .form-control {
-  width: 100%;
-  padding: 10px;
-  font-size: 1.6rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.waffle-form .form-control[type="file"] {
-  padding: 5px;
-}
-
-.waffle-form .btn-submit {
-  width: 100%;
-  padding: 15px;
-  background-color: #CBA181;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.8rem;
-  transition: background-color 0.3s;
-}
-
-.waffle-form .btn-submit:hover {
-  background-color: #A56B52;
-}
-
 /*FOOTER*/
 
 .footer {
+  margin-top: auto; 
+  width: 100%; 
   background-color: #333; 
   color: white;           
   text-align: center;     
   padding: 20px 0;        
-  font-size: 14px;        
+  font-size: 14px;       
+  height: 2cm; 
 }
 
 .footer a {
@@ -266,49 +213,201 @@ body {
   margin-bottom: 50px;
 }
 
-/*LOGIN*/
+/*---------------------------------------------------------------LOGIN*/
+.container-login {
+  height: calc(100vh - 5cm); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
 .login-container {
-  height: 73vh;
-  background-color: #FFF1B1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: auto;
+  width: 40%; 
+  max-width: 500px; 
+  padding: 30px; 
+  background-color: #FFFFFF; 
+  border-radius: 10px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
+  color: #333333; 
 }
 
-.login-container h1 {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  font-size: 2.5rem;
-  color: #333; /* Cor do texto */
+.login-container h2 {
+  text-align: center;
+  color: #CBA181;
+  font-size: 2.4rem; 
+  margin-bottom: 30px;
 }
 
-.login-container form {
-  width: 300px; /* Largura do formulário */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #9F7860; 
+  font-size: 1.6rem; 
 }
 
-.login-container input[type="text"],
-.login-container input[type="password"] {
-  width: 100%; /* Largura dos campos de entrada */
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc; /* Cor da borda */
-  border-radius: 5px; /* Raio da borda */
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 25px;
+  border: 2px solid #CBA181; 
+  border-radius: 5px; 
+  font-size: 1.6rem; 
+  box-sizing: border-box; 
 }
 
-.login-container button[type="submit"] {
-  width: 100%; /* Largura do botão de envio */
-  padding: 10px;
-  background-color: #CBA181; /* Cor de fundo do botão */
-  color: #fff; /* Cor do texto do botão */
+.login-button {
+  background-color: #CBA181;
+  color: white;
   border: none;
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1.8rem; 
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #B8977E; 
+}
+
+.login-links {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.4rem; 
+}
+
+.login-links a {
+  color: #9F7860;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.login-links a:hover {
+  color: #CBA181;
+  text-decoration: underline;
+}
+
+/*---------------------------------------------------------------CREATE PAGE*/
+.create-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  min-height: calc(100vh - 5cm); /* Subtrai a altura estimada do header e footer */
+  padding: 20px;
+}
+
+.form-create-page {
+  width: 60%;
+  max-width: 1000px; /* Limita a largura máxima para grandes telas */
+  padding: 30px;
+  background-color: #ffffff; /* Fundo branco para o formulário */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Espaçamento entre campos do formulário */
+}
+
+.form-group label {
+  font-size: 1.8rem; /* Tamanho da fonte para labels */
+  color: #9F7860; /* Cor do texto para labels */
+}
+
+.form-group input, .form-group textarea {
+  width: 100%; /* Faz os inputs ocuparem todo o espaço horizontal */
+  padding: 15px;
+  border: 2px solid #CBA181; /* Borda na cor tema */
+  border-radius: 5px; /* Bordas arredondadas para os inputs */
+  font-size: 1.6rem;
+  color: #333; /* Cor do texto dentro dos inputs */
+}
+
+.form-group input[type="file"] {
+  border: 2px dashed #CBA181; /* Borda tracejada para o input de arquivo */
+}
+
+.button-submit {
+  background-color: #CBA181;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.8rem;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s; /* Transição suave da cor de fundo */
+  transition: background-color 0.2s;
 }
 
-.login-container button[type="submit"]:hover {
-  background-color: #A56B52; /* Mudança de cor de fundo ao passar o mouse */
+.button-submit:hover {
+  background-color: #B8977E; /* Cor ao passar o mouse */
+}
+
+/*VIEW PAGE*/
+.page-container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.page-container h1 {
+  font-size: 5em;
+  text-transform: uppercase;
+  font-family: 'Bangers', cursive;
+  margin: 40px 0 40px 0
+}
+
+.page-container .cover-image {
+  max-width: 70%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.page-container .page-content h2 {
+  margin: 10px 0 5px 0
+}
+
+.page-container .page-content {
+  font-size: 2.5em;
+  line-height: 1.5;
+  text-align: justify;
+  margin: 20px 0 20px 0
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 2.5em;
+  float: left;
+}
+
+.edit-button,
+.delete-button {
+  display: inline-block;
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 2em;
+  border: 1px solid #333;
+  border-radius: 5px;
+  float: right; /* Alinha os botões à direita */
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.clear {
+  clear: both;
 }

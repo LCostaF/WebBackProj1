@@ -1,62 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="app.js" defer></script>
-    <title>{{title}}</title>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="logo">WAFFLES</div>
-        <ul class="menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/login">Log in</a></li>
-            {{#loggedIn}}
-            <li><a href="/novo-waffle">Novo Waffle</a></li>
-            {{/loggedIn}}
-        </ul>
-    </nav>
-    <div class="slideshow">
-        <div class="carousel">
-            {{#slides}}
-            <div class="slide{{#active}} active{{/active}}">
-                <img src="{{src}}" />
-            </div>
-            {{/slides}}
+{{> header}}
+<div class="slideshow">
+    <div class="carousel">
+        {{#slides}}
+        <div class="slide{{#active}} active{{/active}}">
+            <img src="{{src}}" />
         </div>
-        
-        <div class="controls">
-            <div class="typewriter">
-                <h1>DA BÉLGICA PARA O MUNDO</h1>
-            </div>
-            {{#controls}}
-            <a href="#" data-index="{{index}}"{{#active}} class="active"{{/active}}>
-                <img src="{{src}}" />
+        {{/slides}}
+    </div>
+    
+    <div class="controls">
+        <div class="typewriter">
+            <h1>DA BÉLGICA PARA O MUNDO</h1>
+        </div>
+        {{#controls}}
+        <a href="#" data-index="{{index}}"{{#active}} class="active"{{/active}}>
+            <img src="{{src}}" />
+        </a>
+        {{/controls}}
+    </div>
+</div>
+
+<div class="container">
+    <h2>GALERIA DE VLOGS</h2>
+    <div class="waffle-list">
+        {{#pages}}
+        <div class="waffle">
+            <a href="{{url}}">
+                <img src="/{{coverImage}}" alt="{{title}}">
+                <h3>{{title}}</h3>
             </a>
-            {{/controls}}
         </div>
+        {{/pages}}
     </div>
-
-    <div class="container">
-        <h2>GALERIA DE VLOGS</h2>
-        <div class="waffle-list">
-            {{#waffles}}
-            <div class="waffle">
-                <img src="{{image}}" alt="{{title}}">
-                <h3><a href="/waffle/{{title}}">{{title}}</a></h3>
-            </div>
-            {{/waffles}}
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p>© 2024 WAFFLES. Todos os direitos reservados.</p>
-            <p>Siga-nos em nossas redes sociais: <a href="#">Facebook</a>, <a href="#">Twitter</a>, <a href="#">Instagram</a></p>
-        </div>
-    </footer>
-</body>
-</html>
+</div>
+{{> footer}}
