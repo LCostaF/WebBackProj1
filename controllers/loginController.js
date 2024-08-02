@@ -4,6 +4,7 @@ const {login} = require('../authentication/loginManagement');
 const { loginDb } = require('../authentication/bd');
 
 function loginGet(req, res) {
+    req.session.loggedIn = false;
     res.render("login");
 }
 
