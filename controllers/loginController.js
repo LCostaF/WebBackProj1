@@ -25,7 +25,7 @@ function admPost(req, res) {
             if (success) {
                 console.log("Login bem-sucedido:");
                 req.session.loggedIn = true;
-                req.session.admin = false;
+                req.session.admin = true;
                 res.redirect("/");
             } else {
                 console.log("false");
