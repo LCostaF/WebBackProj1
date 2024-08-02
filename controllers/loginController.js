@@ -17,12 +17,14 @@ function admPost(req, res) {
     if (login(text, password)) {
         console.log("true");
         req.session.loggedIn = true;
+        req.session.admin = true;
         res.redirect("/");
     } else {
         loginDb(text, password, function(success) {
             if (success) {
                 console.log("Login bem-sucedido:");
                 req.session.loggedIn = true;
+                req.session.admin = false;
                 res.redirect("/");
             } else {
                 console.log("false");
